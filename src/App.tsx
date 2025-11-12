@@ -48,14 +48,14 @@ function App() {
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: { key: string }) => {
     if (e.key === "Enter" && !isLoading) {
       handleShortenUrl();
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -72,7 +72,7 @@ function App() {
       <div className="w-full max-w-2xl relative z-10">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-16 sm:h-16 bg-linear-to-br from-indigo-500 to-purple-600 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-lg">
             <Link className="w-8 h-8 sm:w-6 sm:h-6 text-white" />
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">
@@ -125,7 +125,7 @@ function App() {
 
             {/* Result Section */}
             {shortUrl && (
-              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <div className="bg-linear-to-br from-indigo-50 to-purple-50 border-2 border-indigo-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1 min-w-0">
                     <p className="text-xs sm:text-sm font-medium text-gray-600 mb-2">
@@ -142,7 +142,7 @@ function App() {
                   </div>
                   <button
                     onClick={handleCopy}
-                    className="flex-shrink-0 p-2 sm:p-2.5 bg-white hover:bg-indigo-50 rounded-lg sm:rounded-xl border border-indigo-200 transition-all duration-200 hover:scale-105 active:scale-95"
+                    className="shrink-0 p-2 sm:p-2.5 bg-white hover:bg-indigo-50 rounded-lg sm:rounded-xl border border-indigo-200 transition-all duration-200 hover:scale-105 active:scale-95"
                     title="Copy to clipboard"
                   >
                     {copied ? (
@@ -159,7 +159,7 @@ function App() {
             <button
               onClick={handleShortenUrl}
               disabled={isLoading || !longUrl.trim()}
-              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 sm:py-4 px-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 group text-sm sm:text-base"
+              className="w-full bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 sm:py-4 px-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 group text-sm sm:text-base"
             >
               {isLoading ? (
                 <>
