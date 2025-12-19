@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, Copy, Check, Sparkles } from "lucide-react";
+import { Copy, Check, Sparkles } from "lucide-react";
+import logo from "../public/ziplink.png";
 
 function App() {
   const [longUrl, setLongUrl] = useState("");
@@ -72,9 +73,11 @@ function App() {
       <div className="w-full max-w-2xl relative z-10">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-16 sm:h-16 bg-linear-to-br from-indigo-500 to-purple-600 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-lg">
-            <Link className="w-8 h-8 sm:w-6 sm:h-6 text-white" />
-          </div>
+          <img
+            src={logo}
+            alt="logo.png"
+            className="inline-flex items-center justify-center w-26 h-26 sm:w-24 sm:h-24  md:rounded-xl mb-4 sm:mb-6 shadow-lg"
+          ></img>
           <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">
             URL Shortener
           </h1>
